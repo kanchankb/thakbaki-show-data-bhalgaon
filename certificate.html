@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Dues Certificate</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            border: 1px solid black;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
+            box-sizing: border-box;
+        }
+        .header {
+            margin-bottom: 20px;
+        }
+        .header h2 {
+            margin: 0;
+            text-align: center;
+        }
+        .info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .info p {
+            flex: 1;
+            margin: 0;
+            margin-right: 10px;
+        }
+        .info p:last-child {
+            margin-right: 0;
+        }
+        .content {
+            line-height: 1.6;
+        }
+        .footer {
+            margin-top: 20px;
+        }
+        .signature {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            text-align: center;
+        }
+        input {
+            border: none;
+            border-bottom: 1px solid black;
+            margin: 0;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+            background: transparent;
+            padding: 5px;
+        }
+        input::placeholder {
+            color: grey;
+            font-size: 14px;
+        }
+        main {
+            text-align: left;
+        }
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .info, .signature {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .info p, .signature p {
+                margin-bottom: 10px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body onload="loadData()">
+    <div class="container">
+        <div class="header">
+            <h2>थकबाकी नसल्याचे प्रमाणपत्र<br>No Dues Certificate</h2>
+            <div class="main">
+                <p>ग्रामपंचायत कार्यालय <input type="text" id="office">
+                    ता.<input type="text" id="taluka"> जि.<input type="text" id="district">
+                Grampanchayat Office<input type="text" id="office_en">
+                    Tal.<input type="text" id="taluka_en"> Dist.<input type="text" id="district_en"></p>
+            </div>
+        </div>
+        <div class="info">
+            <p>जा़.क्र.<input type="text" id="serial_number"></p>
+            <p>दिनांक: <input type="text" id="date"></p>
+        </div>
+        <div class="content">
+            <p>सरपंच/ग्रामसेवक/ग्रामविकास अधिकारी, ग्रामपंचायत<input type="text" id="grampanchayat"> ता.<input type="text" id="taluka2"> जि.<input type="text" id="district2"></p>
+            <p>Sarpanch/Gramsevak/Village Development Officer, Grampanchayat <input type="text" id="grampanchayat_en"> Tal.<input type="text" id="taluka2_en"> Dist.<input type="text" id="district2_en"></p>
+            <p>यांकडून दाखला देण्यात येतो,</p>
+            <p>is issuing the certificate,</p>
+            <p>की श्री/श्रीमती<input type="text" id="name"></p>
+            <p>that Mr./Mrs.<input type="text" id="name_en"></p>
+            <p>आधार कार्ड क्रमांक <input type="text" id="aadhar_number"></p>
+            <p>Aadhar Card Number <input type="text" id="aadhar_number_en"></p>
+            <p>हे/ह्या <input type="text" id="residence"> ता.<input type="text" id="residence_taluka"> जि.<input type="text" id="residence_district">, महाराष्ट्र येथील कायमचे रहिवासी असून</p>
+            <p>is a permanent resident of <input type="text" id="residence_en"> Tal.<input type="text" id="residence_taluka_en"> Dist.<input type="text" id="residence_district_en">, Maharashtra</p>
+            <p>त्यांच्याकडे ग्रामपंचायतीची कोणत्याही प्रकारची थकबाकी नाही.</p>
+            <p>and he/she has no balance due towards Grampanchayat.</p>
+            <p>सदर दाखला अर्जदाराच्या विनंतीनुसार देण्यात येत आहे.</p>
+            <p>This certificate is issued on request of the applicant.</p>
+        </div>
+        <div class="footer">
+            <div class="signature">
+                <p>ठिकाण: <input type="text" id="place"></p>
+                <p>Place: <input type="text" id="place_en"></p>
+            </div>
+            <div class="signature">
+                <p>सही व शिक्का <br> Signature with Stamp <br> सरपंच/ग्रामसेवक/ग्रामविकास अधिकारी <br> Sarpanch/Gramsevak/Village Development Officer</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function loadData() {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            document.getElementById('office').value = urlParams.get('office') || '';
+            document.getElementById('taluka').value = urlParams.get('taluka') || '';
+            document.getElementById('district').value = urlParams.get('district') || '';
+            document.getElementById('office_en').value = urlParams.get('office_en') || '';
+            document.getElementById('taluka_en').value = urlParams.get('taluka_en') || '';
+            document.getElementById('district_en').value = urlParams.get('district_en') || '';
+            document.getElementById('serial_number').value = urlParams.get('serial_number') || '';
+            document.getElementById('date').value = urlParams.get('date') || '';
+            document.getElementById('grampanchayat').value = urlParams.get('grampanchayat') || '';
+            document.getElementById('taluka2').value = urlParams.get('taluka2') || '';
+            document.getElementById('district2').value = urlParams.get('district2') || '';
+            document.getElementById('grampanchayat_en').value = urlParams.get('grampanchayat_en') || '';
+            document.getElementById('taluka2_en').value = urlParams.get('taluka2_en') || '';
+            document.getElementById('district2_en').value = urlParams.get('district2_en') || '';
+            document.getElementById('name').value = urlParams.get('name') || '';
+            document.getElementById('name_en').value = urlParams.get('name_en') || '';
+            document.getElementById('aadhar_number').value = urlParams.get('aadhar_number') || '';
+            document.getElementById('aadhar_number_en').value = urlParams.get('aadhar_number_en') || '';
+            document.getElementById('residence').value = urlParams.get('residence') || '';
+            document.getElementById('residence_taluka').value = urlParams.get('residence_taluka') || '';
+            document.getElementById('residence_district').value = urlParams.get('residence_district') || '';
+            document.getElementById('residence_en').value = urlParams.get('residence_en') || '';
+            document.getElementById('residence_taluka_en').value = urlParams.get('residence_taluka_en') || '';
+            document.getElementById('residence_district_en').value = urlParams.get('residence_district_en') || '';
+            document.getElementById('place').value = urlParams.get('place') || '';
+            document.getElementById('place_en').value = urlParams.get('place_en') || '';
+        }
+    </script>
+</body>
+</html>
